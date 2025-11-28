@@ -1,10 +1,11 @@
+# test_calculate_speed.py
 import pytest
-from speed import calculate_speed
+from calculate_speed import calculate_speed
 
-def test_speed_calculation():
-    distance = 100
-    time = 5
-    expected_speed = 20
+def test_calculate_speed_normal():
+    result = calculate_speed(100, 5)
+    assert result == 20
 
-    result = calculate_speed(distance, time)
-    assert result == expected_speed
+def test_calculate_speed_zero_time():
+    result = calculate_speed(50, 0)
+    assert result == "Time cannot be zero"
